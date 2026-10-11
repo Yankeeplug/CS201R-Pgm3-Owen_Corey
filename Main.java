@@ -4,6 +4,7 @@ import java.io.PrintWriter;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.FileNotFoundException;
+import java.util.Scanner;
 //NAME:
 //ASSIGNMENT:
 //LAB SECTION:
@@ -30,8 +31,26 @@ public class Main{
         // if not able to open, print a message and continue
         // else process the file
         // if the file can be read properly, print the results
-        for (int i = 1; i <= 8; i++){
- 
+        for (int i = 1; i <= 8; i++)
+        {
+            inFileName = "review" + i + ".txt";
+            
+            try 
+            {
+                FileReader inFile = new FileReader(inFileName);
+                Scanner fileScanner = new Scanner(inFile);
+                
+                System.out.println("File found at index " + i);
+
+                fileScanner.close();
+            } 
+            
+            catch (FileNotFoundException e) 
+            {
+                System.out.println("File not found.");
+            }
+            
+            
         }
 
         outFile.close();
@@ -48,11 +67,24 @@ public class Main{
         try (BufferedReader br = new BufferedReader(new FileReader(csvFilePath))) {
             while ((line = br.readLine()) != null) {
                  // Split the line by commas into an array of strings
-                  
+                 String[] trimmedLines = line.trim().split(",");
+                 line = trimmedLines[0];
+                 tempValue = Double.parseDouble(trimmedLines[1]);
+                 
                  //Create object SentList & add to sentList arraylist
- 
+                 SentList listToAdd = new SentList(line, tempValue);
+                 sentList.add(listToAdd);
+
                  //if word values are pos add to posList
+                 if (listToAdd.value >= 0)
+                 {
+                    posList.add(listToAdd);
+                 }
                  //if word values are neg, add to neglist
+                 else
+                 {
+                    negList.add(listToAdd);
+                 }
             }
         } 
         catch (IOException e) {
