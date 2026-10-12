@@ -22,34 +22,24 @@ public class Main{
         readSentimentList(sentList, posList, negList);
 
         //read review
-        //load ArrayList wordList that will contain original review & pos & neg
-        String inFileName;
         String outFileName = "reviews.txt";
         PrintWriter outFile = new PrintWriter(outFileName);
-
+        
+        //load ArrayList wordList that will contain original review & pos & neg
         // open input file adding review + number + ".txt" to review
+        
         // if not able to open, print a message and continue
         // else process the file
         // if the file can be read properly, print the results
         for (int i = 1; i <= 8; i++)
         {
-            inFileName = "review" + i + ".txt";
-            
-            try 
-            {
-                FileReader inFile = new FileReader(inFileName);
-                
-                
+            String inFileName;
 
-                
-            } 
-            
-            catch (FileNotFoundException e) 
-            {
-                System.out.println("File not found.");
-            }
-            
-            
+            inFileName = "review" + i + ".txt";
+
+            FileReader inFile = new FileReader(inFileName);
+
+
         }
 
         outFile.close();
@@ -62,25 +52,28 @@ public class Main{
                                          ArrayList<SentList> negList){
         String csvFilePath = "sentiment.txt";
         String line;
-        double tempValue;
+        double value;
         try (BufferedReader br = new BufferedReader(new FileReader(csvFilePath))) {
             while ((line = br.readLine()) != null) {
                  // Split the line by commas into an array of strings
                  String[] trimmedLines = line.trim().split(",");
                  line = trimmedLines[0];
-                 tempValue = Double.parseDouble(trimmedLines[1]);
+                 value = Double.parseDouble(trimmedLines[1]);
                  
                  //Create object SentList & add to sentList arraylist
-                 SentList listToAdd = new SentList(line, tempValue);
+                 SentList listToAdd = new SentList(line, value);
                  sentList.add(listToAdd);
 
                  //if word values are pos add to posList
-                 if (listToAdd.value >= 1.25)
-                 {
-                    posList.add(listToAdd);
-                 }
                  //if word values are neg, add to neglist
-                 else if (listToAdd.value <= - 1.25)
+                 double listValue = getSentiment(sentList, line);
+
+                 if (listValue >= 1.25) 
+                 {
+                    posList.add(listToAdd); 
+                 }
+
+                 else if (listValue <= - 1.25)
                  {
                     negList.add(listToAdd);
                  }
@@ -109,15 +102,19 @@ public class Main{
         try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
             while ((line = br.readLine()) != null) {
                  // Split the line by commas into an array of strings
-                 String[] values = line.split(" ");
+                 String[] values = line.split(",");
                  
                  //for each word
+                 for ( Words word : wordList) 
+                 {
                  //  strip off punctuation at the end of word set charWord to null or value of punctuation
                  //  save origWord, posWord, negWord
                  //  change to lower case  (set editWord)
                  //  look up word in sentList (set origValue, posVlue, negValue)
                  //  if positive enough, find new negword in negList & reset negWord & NegValue, reset negFlag
                  //  if negative enough, find new posword in posList & reset posWord & posValue, reset posFlag
+                    
+                 }
 
 
             }
@@ -134,9 +131,9 @@ public class Main{
     //POST: loop through word list, create a string that will be the original, positive & negative reviews
     //      print each review
     public static void printReview(ArrayList<Words> wordList, String inFile, 
-                                  PrintWriter outFile){
+                                  PrintWriter outFile)
+    {
 
- 
     }
 
     //PRE:  accept a character
@@ -150,8 +147,9 @@ public class Main{
 
     //PRE:  accept the sentiment words list and a word to find
     //POST: return the value of the sentiment if found, 0 otherwise
-    static double getSentiment (ArrayList<SentList> sentList, String eWord) {
-
+    static double getSentiment (ArrayList<SentList> sentList, String eWord) 
+    {
+        
         
         return 0.0;
     }
