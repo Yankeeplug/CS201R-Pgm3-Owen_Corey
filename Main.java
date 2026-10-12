@@ -4,11 +4,11 @@ import java.io.PrintWriter;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.FileNotFoundException;
-import java.util.Scanner;
-//NAME:
-//ASSIGNMENT:
-//LAB SECTION:
-//LECTURE SECTION:
+
+//NAME: Owen Corey
+//ASSIGNMENT: 3
+//LAB SECTION: 6
+//LECTURE SECTION: 7
 
 public class Main{
 
@@ -38,11 +38,10 @@ public class Main{
             try 
             {
                 FileReader inFile = new FileReader(inFileName);
-                Scanner fileScanner = new Scanner(inFile);
                 
-                System.out.println("File found at index " + i);
+                
 
-                fileScanner.close();
+                
             } 
             
             catch (FileNotFoundException e) 
@@ -76,12 +75,12 @@ public class Main{
                  sentList.add(listToAdd);
 
                  //if word values are pos add to posList
-                 if (listToAdd.value >= 0)
+                 if (listToAdd.value >= 1.25)
                  {
                     posList.add(listToAdd);
                  }
                  //if word values are neg, add to neglist
-                 else
+                 else if (listToAdd.value <= - 1.25)
                  {
                     negList.add(listToAdd);
                  }
