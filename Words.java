@@ -34,4 +34,9 @@ public class Words {
     public static boolean getNegFlag(){
         return negFlag;
     }
+
+    public String getOrigWord() { return origWord; }
+    public String getEditWord() { return editWord; }
+    public String getPosWord() { return posWord; }
+    public String getNegWord() { return negWord; }
 }

@@ -21,25 +21,35 @@ public class Main{
         //load sentiment, positive words and negative words arraylists
         readSentimentList(sentList, posList, negList);
 
-        //read review
+        //read reviews
+        //load ArrayList wordList that will contain original review & pos & neg
+        String inFileName;
         String outFileName = "reviews.txt";
         PrintWriter outFile = new PrintWriter(outFileName);
-        
-        //load ArrayList wordList that will contain original review & pos & neg
+
         // open input file adding review + number + ".txt" to review
-        
         // if not able to open, print a message and continue
         // else process the file
         // if the file can be read properly, print the results
         for (int i = 1; i <= 8; i++)
         {
-            String inFileName;
-
             inFileName = "review" + i + ".txt";
 
-            FileReader inFile = new FileReader(inFileName);
+            try 
+            {
+                FileReader inFile = new FileReader(inFileName);
 
-
+                outFile.println("PROCESSING FILE: " + inFileName + "\n");
+                readReview(sentList, posList, negList, wordList, inFileName);
+                printReview(wordList, sentList, inFileName, outFile);
+                printEditedReview(wordList, sentList, inFileName, outFile);
+                outFile.println("\n\n");
+            }
+            
+            catch (FileNotFoundException e) 
+            {
+                System.out.println("No file found!");
+            }
         }
 
         outFile.close();
@@ -55,30 +65,30 @@ public class Main{
         double value;
         try (BufferedReader br = new BufferedReader(new FileReader(csvFilePath))) {
             while ((line = br.readLine()) != null) {
-                 // Split the line by commas into an array of strings
-                 String[] trimmedLines = line.trim().split(",");
-                 line = trimmedLines[0];
-                 value = Double.parseDouble(trimmedLines[1]);
+                // Split the line by commas into an array of strings
+                String[] trimmedLines = line.trim().split(",");
+                line = trimmedLines[0];
+                value = Double.parseDouble(trimmedLines[1]);
                  
-                 //Create object SentList & add to sentList arraylist
-                 SentList listToAdd = new SentList(line, value);
-                 sentList.add(listToAdd);
+                //Create object SentList & add to sentList arraylist
+                SentList listToAdd = new SentList(line, value);
+                sentList.add(listToAdd);
 
-                 //if word values are pos add to posList
-                 //if word values are neg, add to neglist
-                 double listValue = getSentiment(sentList, line);
-
-                 if (listValue >= 1.25) 
-                 {
+                //if word values are pos add to posList
+                //if word values are neg, add to neglist
+                if (listToAdd.value >= 0) 
+                {
                     posList.add(listToAdd); 
-                 }
+                }
 
-                 else if (listValue <= - 1.25)
-                 {
+                else if (listToAdd.value < 0)
+                {
                     negList.add(listToAdd);
-                 }
+                }
             }
-        } 
+
+        }
+
         catch (IOException e) {
             System.out.println("Error reading the file.");
             e.printStackTrace();
@@ -89,51 +99,185 @@ public class Main{
     //POST: read the file while the line is not null
     //      each word is edited (to lower case without punctuation)
     //      the sentiment value is accessed
-    //      if the word is positive - update to a random word in the negative list and update the word value
-    //      if the word is negative - update to a random positive word in the positive list & update the word value
+    //      if the word is positive - update to a random word in the negative list & update the word value
+    //      if the word is negative - update to a random word in the positive list & update the word value
 
-    public static boolean readReview(ArrayList<SentList> sentList,
+    public static void readReview(ArrayList<SentList> sentList,
                                   ArrayList<SentList> posList,
                                   ArrayList<SentList> negList,
                                   ArrayList<Words> wordList,
-                                  String fileName){
+                                  String inFile) {
 
-        String line;
-        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
-            while ((line = br.readLine()) != null) {
-                 // Split the line by commas into an array of strings
-                 String[] values = line.split(",");
+        
+        try (BufferedReader br = new BufferedReader(new FileReader(inFile))) 
+        {
+            String line;
+            while ((line = br.readLine()) != null) 
+                {
+                // Split the line by spaces into an array of strings
+                String[] values = line.split(" ");
                  
-                 //for each word
-                 for ( Words word : wordList) 
-                 {
-                 //  strip off punctuation at the end of word set charWord to null or value of punctuation
-                 //  save origWord, posWord, negWord
-                 //  change to lower case  (set editWord)
-                 //  look up word in sentList (set origValue, posVlue, negValue)
-                 //  if positive enough, find new negword in negList & reset negWord & NegValue, reset negFlag
-                 //  if negative enough, find new posword in posList & reset posWord & posValue, reset posFlag
+                //for each word
+                for ( String word : values) 
+                {
+                    //  strip off punctuation at the end of word set charWord to null or value of punctuation
+                    String originalWord = word.replaceAll("[\\p{Punct}]", "");
                     
-                 }
+                    //  save origWord, posWord, negWord
+                    String posWord = "";
+                    String negWord = "";
+                    
+                    //  change to lower case  (set editWord)
+                    String editWord = originalWord.toLowerCase();
 
+                    //  look up word in sentList (set origValue, posValue, negValue)
+                    double tempValue = getSentiment(sentList, editWord);
+                    double posValue = 0;
+                    double negValue = 0;
 
+                    //  if positive enough, find new negword in negList & reset negWord & NegValue, reset negFlag
+                    if (tempValue >= 1.25)
+                    {
+                        int negIndex = (int)(Math.random() * negList.size());
+                        negWord = negList.get(negIndex).word;
+                        negValue = getSentiment(sentList, negWord);
+                    }
+
+                    //  if negative enough, find new posword in posList & reset posWord & posValue, reset posFlag
+                    else if (tempValue <= -1.25)
+                    {
+                        int posIndex = (int)(Math.random() * posList.size());
+                        posWord = posList.get(posIndex).word;
+                        posValue = getSentiment(sentList, posWord);
+                    }
+
+                    Words wordToAdd = new Words(originalWord, editWord, posWord, negWord, tempValue, posValue, negValue);
+
+                    wordList.add(wordToAdd);
+                }
             }
+
             br.close();
-            return true;
-        } 
+        }
+
         catch (IOException e) {
-            System.out.println("Error reading the file: " + fileName);
-            return false;
+            System.out.println("Error reading the file.");
         }
     }
 
     //PRE:  accept the updated wordlist
     //POST: loop through word list, create a string that will be the original, positive & negative reviews
     //      print each review
-    public static void printReview(ArrayList<Words> wordList, String inFile, 
+    public static void printReview(ArrayList<Words> wordList, ArrayList<SentList> sentList, String inFile, 
                                   PrintWriter outFile)
     {
+        try (BufferedReader br = new BufferedReader(new FileReader(inFile))) 
+        {
+            String line;
+            double sentiment = 0;
+            int charCount = 0;
 
+            while ((line = br.readLine()) != null) 
+            {
+                String[] words = line.split(" ");
+
+                for (String word : words) 
+                {
+                    double wordValue = getSentiment(sentList, word);
+
+                    sentiment += wordValue;
+                    charCount += word.length() + 1;
+                    
+                    if (charCount > 80)
+                    {
+                        charCount = 0;
+                        outFile.println();
+                    }
+
+                    outFile.print(word + " ");
+                }
+            }
+            
+            String formattedSentiment = String.format("%.2f", sentiment);
+
+            outFile.println("\n\nFINAL SENTIMENT: " + formattedSentiment + "\n");
+        }
+
+        catch (IOException e) 
+        {
+            System.out.println("Error reading the file: " + inFile);
+        }
+    }
+
+    //PRE:  accept the updated wordlist
+    //POST: loop through word list, create a string that will be the original, positive & negative reviews
+    //      print each review
+    public static void printEditedReview(ArrayList<Words> wordList, ArrayList<SentList> sentList, String inFile, 
+                                  PrintWriter outFile)
+    {
+        try (BufferedReader br = new BufferedReader(new FileReader(inFile))) 
+        {
+            String line;
+            double sentiment = 0;
+            int charCount = 0;
+            ArrayList<String> editedWords = new ArrayList<String>();
+
+            while ((line = br.readLine()) != null) 
+            {
+                String[] words = line.split(" ");
+
+                for (String word : words) 
+                {
+                    String tempWord = word.replaceAll("[\\p{Punct}]", "");
+                    Words foundWord = getWord(wordList, tempWord);
+                    String wordStr = word;
+                    double value = foundWord.sentOrigValue;
+
+                    if (charCount > 80)
+                    {
+                        charCount = 0;
+                        outFile.println();
+                    }
+
+                    //  if positive enough, find new negword in negList & reset negWord & NegValue, reset negFlag
+                    if (value >= 1.25)
+                    {
+                        wordStr = foundWord.negWord;    
+                        value = foundWord.sentNegValue;
+                        editedWords.add(wordStr + " --- " + value);
+                    }
+
+                    //  if negative enough, find new posword in posList & reset posWord & posValue, reset posFlag
+                    else if (value <= -1.25)
+                    {
+                        wordStr = foundWord.posWord;
+                        value = foundWord.sentPosValue;
+                        editedWords.add(wordStr + " --- " + value);
+                    }
+
+                    outFile.print(wordStr + " ");
+                    
+                    sentiment += value;
+                    charCount += word.length() + 1;
+                }
+            }
+            
+            String formattedSentiment = String.format("%.2f", sentiment);
+
+            outFile.println("\n\nREPLACED WORDS:");
+
+            for (String word : editedWords) 
+            {
+                outFile.println(word);
+            }
+
+            outFile.println("\nFINAL SENTIMENT: " + formattedSentiment);
+        }
+
+        catch (IOException e) 
+        {
+            System.out.println("Error reading the file: " + inFile);
+        }
     }
 
     //PRE:  accept a character
@@ -149,8 +293,33 @@ public class Main{
     //POST: return the value of the sentiment if found, 0 otherwise
     static double getSentiment (ArrayList<SentList> sentList, String eWord) 
     {
-        
+        for (SentList sentWord : sentList) 
+        {
+            String tempStr = sentWord.word;
+            if (tempStr.equals(eWord))
+            {
+                System.out.print("");
+                return sentWord.value;
+            }
+        }
         
         return 0.0;
+    }
+
+    //PRE:  accept the words list and a word to find
+    //POST: return the word if found, null otherwise
+    static Words getWord (ArrayList<Words> wordList, String eWord) 
+    {
+        for (Words word : wordList) 
+        {
+            String tempStr = word.getOrigWord();
+            if (tempStr.equals(eWord))
+            {
+                System.out.print("");
+                return word;
+            }
+        }
+        
+        return null;
     }
 }
