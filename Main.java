@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.io.BufferedReader;
 import java.io.PrintWriter;
 import java.io.FileReader;
@@ -157,6 +159,8 @@ public class Main{
                 }
             }
 
+            sortWordList(wordList);
+
             br.close();
         }
 
@@ -238,8 +242,16 @@ public class Main{
 
                     String tempWord = word.replaceAll("[\\p{Punct}]", "");
                     Words foundWord = getWord(wordList, tempWord);
-                    String wordStr = foundWord.origWord;
-                    double value = foundWord.sentOrigValue;
+                    String wordStr = tempWord;
+                    double value = 0;
+                    double tempValue = 0;
+
+                    if (!(foundWord == null))
+                    {
+                        wordStr = foundWord.origWord;
+                        value = foundWord.sentOrigValue;
+                        tempValue = foundWord.sentOrigValue;
+                    }
 
                     if (charCount > 80)
                     {
@@ -252,7 +264,7 @@ public class Main{
                     {
                         wordStr = foundWord.negWord;    
                         value = foundWord.sentNegValue;
-                        editedWords.add(wordStr + " --- " + value);
+                        editedWords.add(tempWord + " --- " + tempValue + "\twith\t" + wordStr + " --- " + value);
                     }
 
                     //  if negative enough, find new posword in posList & reset posWord & posValue, reset posFlag
@@ -260,7 +272,7 @@ public class Main{
                     {
                         wordStr = foundWord.posWord;
                         value = foundWord.sentPosValue;
-                        editedWords.add(wordStr + " --- " + value);
+                        editedWords.add(tempWord + " --- " + tempValue + "\twith\t" + wordStr + " --- " + value);
                     }
 
                     if (capitalized)
@@ -307,6 +319,8 @@ public class Main{
         return false;
     }
 
+    //PRE: accepts a character
+    //POST: return true if the first letter is upper case; false otherwise
     static boolean isCaps (char ch) {
         boolean bool = false;
 
@@ -318,37 +332,104 @@ public class Main{
         return bool;
     }
 
+    static int sentSearch(ArrayList<SentList> sentList, String word)
+    {
+        int start = 0;
+        int end = sentList.size() - 1;
+        int index = -1;
+
+        while (start <= end)
+        {
+            int middle = (start + end) / 2;
+            int compare = sentList.get(middle).word.compareTo(word.toLowerCase());
+
+            if (compare == 0)
+            {
+                index = middle;
+                return index;
+            }
+
+            else if (compare > 0)
+            {
+                end = middle - 1;
+            }
+
+            else
+            {
+                start = middle + 1;
+            }
+        }
+
+        return index;
+    }
+
     //PRE:  accept the sentiment words list and a word to find
     //POST: return the value of the sentiment if found, 0 otherwise
     static double getSentiment (ArrayList<SentList> sentList, String eWord) 
     {
-        for (SentList sentWord : sentList) 
+        int index = sentSearch(sentList, eWord);
+
+        if (index == -1)
         {
-            String tempStr = sentWord.word;
-            if (tempStr.equals(eWord))
-            {
-                System.out.print("");
-                return sentWord.value;
-            }
+            return 0.0;
         }
         
-        return 0.0;
+        return sentList.get(index).value;
+    }
+
+    static int wordSearch(ArrayList<Words> wordList, String word)
+    {
+        int start = 0;
+        int end = wordList.size() - 1;
+        int index = -1;
+
+        while (start <= end)
+        {
+            int middle = (start + end) / 2;
+            int compare = wordList.get(middle).getEditWord().compareTo(word.toLowerCase());
+
+            if (compare == 0)
+            {
+                index = middle;
+                return index;
+            }
+
+            else if (compare > 0)
+            {
+                end = middle - 1;
+            }
+
+            else
+            {
+                start = middle + 1;
+            }
+        }
+
+        return index;
     }
 
     //PRE:  accept the words list and a word to find
     //POST: return the word if found, null otherwise
     static Words getWord (ArrayList<Words> wordList, String eWord) 
     {
-        for (Words word : wordList) 
-        {
-            String tempStr = word.getOrigWord();
-            if (tempStr.equals(eWord))
-            {
-                System.out.print("");
-                return word;
-            }
-        }
+        int index = wordSearch(wordList, eWord);
         
-        return null;
+        if (index == -1)
+        {
+            return null;
+        }
+
+        return wordList.get(index);
+    }
+
+    static void sortWordList(ArrayList<Words> wordList)
+    {
+        Collections.sort(wordList, new Comparator<Words>() 
+        {
+            @Override public int compare(Words w1, Words w2) 
+            {
+                return w1.getEditWord().compareTo(w2.getEditWord());
+            }
+        });
     }
 }
