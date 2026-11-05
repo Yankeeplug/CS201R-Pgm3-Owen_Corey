@@ -226,15 +226,21 @@ public class Main{
             int charCount = 0;
             ArrayList<String> editedWords = new ArrayList<String>();
 
+            //While there is a line to read:
             while ((line = br.readLine()) != null) 
             {
+                //Split the line into separate words and add to words array.
                 String[] words = line.split(" ");
 
+                //For each word in words.
                 for (String word : words) 
                 {
                     boolean capitalized = false;
+
+                    //Gets the last character in the string.
                     char punctuation = word.charAt(word.length() - 1);
 
+                    //Identifies if the first character is capitalized.
                     if (isCaps(word.charAt(0)))
                     {
                         capitalized = true;
@@ -246,6 +252,7 @@ public class Main{
                     double value = 0;
                     double tempValue = 0;
 
+                    //If the word exists in the word list:
                     if (!(foundWord == null))
                     {
                         wordStr = foundWord.origWord;
@@ -253,6 +260,7 @@ public class Main{
                         tempValue = foundWord.sentOrigValue;
                     }
 
+                    //Prints a new line once a string has surpassed 80 characters.
                     if (charCount > 80)
                     {
                         charCount = 0;
@@ -264,7 +272,7 @@ public class Main{
                     {
                         wordStr = foundWord.negWord;    
                         value = foundWord.sentNegValue;
-                        editedWords.add(tempWord + " --- " + tempValue + "\t\twith\t\t" + wordStr + " --- " + value);
+                        editedWords.add(String.format("%-25s%-25s", tempWord + " --- " + tempValue, wordStr + " --- " + value));
                     }
 
                     //  if negative enough, find new posword in posList & reset posWord & posValue, reset posFlag
@@ -272,14 +280,16 @@ public class Main{
                     {
                         wordStr = foundWord.posWord;
                         value = foundWord.sentPosValue;
-                        editedWords.add(tempWord + " --- " + tempValue + "\t\twith\t\t" + wordStr + " --- " + value);
+                        editedWords.add(String.format("%-25s%-25s", tempWord + " --- " + tempValue, wordStr + " --- " + value));
                     }
 
+                    //If the first letter was capitalized, make the replacement capitalized.
                     if (capitalized)
                     {
                         wordStr = wordStr.substring(0, 1).toUpperCase() + wordStr.substring(1);
                     }
 
+                    //If string had punctuation, add it to the replacement.
                     if (isPunctuation(punctuation))
                     {
                         wordStr = wordStr + punctuation;
@@ -296,6 +306,7 @@ public class Main{
 
             outFile.println("\n\nREPLACED WORDS:");
 
+            //Prints all words that were changed and what they were changed into.
             for (String word : editedWords) 
             {
                 outFile.println(word);
@@ -332,6 +343,10 @@ public class Main{
         return bool;
     }
 
+
+    //PRE:  accepts the sentList and a word to find.
+    //POST: returns the index if word was found; -1 otherwise    
+    
     static int sentSearch(ArrayList<SentList> sentList, String word)
     {
         int start = 0;
@@ -341,6 +356,8 @@ public class Main{
         while (start <= end)
         {
             int middle = (start + end) / 2;
+            
+            //Compares the middle string and the word to find.
             int compare = sentList.get(middle).word.compareTo(word.toLowerCase());
 
             if (compare == 0)
@@ -377,6 +394,10 @@ public class Main{
         return sentList.get(index).value;
     }
 
+
+    //PRE:  accepts the wordList and a word to find.
+    //POST: returns the index if word was found; -1 otherwise
+
     static int wordSearch(ArrayList<Words> wordList, String word)
     {
         int start = 0;
@@ -386,6 +407,7 @@ public class Main{
         while (start <= end)
         {
             int middle = (start + end) / 2;
+            //Compares the middle string and the word to find.
             int compare = wordList.get(middle).getEditWord().compareTo(word.toLowerCase());
 
             if (compare == 0)
