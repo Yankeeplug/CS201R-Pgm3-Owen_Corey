@@ -346,13 +346,13 @@ public class Main{
 
     //PRE:  accepts the sentList and a word to find.
     //POST: returns the index if word was found; -1 otherwise    
-    
     static int sentSearch(ArrayList<SentList> sentList, String word)
     {
         int start = 0;
         int end = sentList.size() - 1;
         int index = -1;
 
+        //While the start of the list is less than or equal to the end.        
         while (start <= end)
         {
             int middle = (start + end) / 2;
@@ -360,19 +360,25 @@ public class Main{
             //Compares the middle string and the word to find.
             int compare = sentList.get(middle).word.compareTo(word.toLowerCase());
 
+            //If the value equals 0, the words match.
             if (compare == 0)
             {
+                //Return the found index.
                 index = middle;
                 return index;
             }
 
+            //If the value is greater than 0, result is between start and middle.
             else if (compare > 0)
             {
+                //Constrict the end to the middle.
                 end = middle - 1;
             }
 
+            //Otherwise it's between the middle and the end.
             else
             {
+                //Constrict the start to the middle.
                 start = middle + 1;
             }
         }
@@ -397,32 +403,39 @@ public class Main{
 
     //PRE:  accepts the wordList and a word to find.
     //POST: returns the index if word was found; -1 otherwise
-
     static int wordSearch(ArrayList<Words> wordList, String word)
     {
         int start = 0;
         int end = wordList.size() - 1;
         int index = -1;
 
+        //While the start of the list is less than or equal to the end.
         while (start <= end)
         {
             int middle = (start + end) / 2;
+            
             //Compares the middle string and the word to find.
             int compare = wordList.get(middle).getEditWord().compareTo(word.toLowerCase());
 
+            //If the value equals 0, the words match.
             if (compare == 0)
             {
+                //Return the found index.
                 index = middle;
                 return index;
             }
 
+            //If the value is greater than 0, result is between start and middle.
             else if (compare > 0)
             {
+                //Constrict the end to the middle.
                 end = middle - 1;
             }
 
+            //Otherwise it's between the middle and the end.
             else
             {
+                //Constrict the start to the middle.
                 start = middle + 1;
             }
         }
@@ -444,8 +457,11 @@ public class Main{
         return wordList.get(index);
     }
 
+    //PRE: accepts the wordList
+    //POST: Does not return any args
     static void sortWordList(ArrayList<Words> wordList)
     {
+        //Sorts the wordList using Collections' Comparator.
         Collections.sort(wordList, new Comparator<Words>() 
         {
             @Override public int compare(Words w1, Words w2) 
