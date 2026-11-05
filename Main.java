@@ -35,18 +35,18 @@ public class Main{
         {
             inFileName = "review" + i + ".txt";
 
-            try 
+            try
             {
                 FileReader inFile = new FileReader(inFileName);
 
                 outFile.println("PROCESSING FILE: " + inFileName + "\n");
-                readReview(sentList, posList, negList, wordList, inFileName);
+                readReview(wordList, sentList, posList, negList, inFileName);
                 printReview(wordList, sentList, inFileName, outFile);
                 printEditedReview(wordList, sentList, inFileName, outFile);
                 outFile.println("\n\n");
             }
             
-            catch (FileNotFoundException e) 
+            catch (Exception e) 
             {
                 System.out.println("No file found!");
             }
@@ -102,10 +102,10 @@ public class Main{
     //      if the word is positive - update to a random word in the negative list & update the word value
     //      if the word is negative - update to a random word in the positive list & update the word value
 
-    public static void readReview(ArrayList<SentList> sentList,
+    public static void readReview(ArrayList<Words> wordList,
+                                  ArrayList<SentList> sentList,
                                   ArrayList<SentList> posList,
                                   ArrayList<SentList> negList,
-                                  ArrayList<Words> wordList,
                                   String inFile) {
 
         
@@ -118,7 +118,7 @@ public class Main{
                 String[] values = line.split(" ");
                  
                 //for each word
-                for ( String word : values) 
+                for (String word : values) 
                 {
                     //  strip off punctuation at the end of word set charWord to null or value of punctuation
                     String originalWord = word.replaceAll("[\\p{Punct}]", "");
@@ -161,7 +161,7 @@ public class Main{
         }
 
         catch (IOException e) {
-            System.out.println("Error reading the file.");
+            System.out.println("Error reading the file: " + inFile);
         }
     }
 
@@ -228,9 +228,17 @@ public class Main{
 
                 for (String word : words) 
                 {
+                    boolean capitalized = false;
+                    char punctuation = word.charAt(word.length() - 1);
+
+                    if (isCaps(word.charAt(0)))
+                    {
+                        capitalized = true;
+                    }
+
                     String tempWord = word.replaceAll("[\\p{Punct}]", "");
                     Words foundWord = getWord(wordList, tempWord);
-                    String wordStr = word;
+                    String wordStr = foundWord.origWord;
                     double value = foundWord.sentOrigValue;
 
                     if (charCount > 80)
@@ -253,6 +261,16 @@ public class Main{
                         wordStr = foundWord.posWord;
                         value = foundWord.sentPosValue;
                         editedWords.add(wordStr + " --- " + value);
+                    }
+
+                    if (capitalized)
+                    {
+                        wordStr = wordStr.substring(0, 1).toUpperCase() + wordStr.substring(1);
+                    }
+
+                    if (isPunctuation(punctuation))
+                    {
+                        wordStr = wordStr + punctuation;
                     }
 
                     outFile.print(wordStr + " ");
@@ -283,10 +301,21 @@ public class Main{
     //PRE:  accept a character
     //POST: return true if this character is punctuation; false otherwise
     //      There may be a better way to write this!
-    static boolean isPunctuation(char ch) {
+    static boolean isPunctuation (char ch) {
         if (ch == '!' || ch == '\"' || ch == '#' || ch == '$' || ch == '%' || ch == '&' || ch == '\'' || ch == '(' || ch == ')' || ch == '*' || ch == '+' || ch == ',' || ch == '-' || ch == '.' || ch == '/' || ch == ':' || ch == ';' || ch == '<' || ch == '=' || ch == '>' || ch == '?' || ch == '@' || ch == '[' || ch == '\\' || ch == ']' || ch == '^' || ch == '`' || ch == '{' || ch == '|' || ch == '}')
           return true;
         return false;
+    }
+
+    static boolean isCaps (char ch) {
+        boolean bool = false;
+
+        if (Character.isUpperCase(ch))
+        {
+            bool = true;
+        }
+
+        return bool;
     }
 
     //PRE:  accept the sentiment words list and a word to find
