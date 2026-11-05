@@ -264,7 +264,7 @@ public class Main{
                     {
                         wordStr = foundWord.negWord;    
                         value = foundWord.sentNegValue;
-                        editedWords.add(tempWord + " --- " + tempValue + "\twith\t" + wordStr + " --- " + value);
+                        editedWords.add(tempWord + " --- " + tempValue + "\t\twith\t\t" + wordStr + " --- " + value);
                     }
 
                     //  if negative enough, find new posword in posList & reset posWord & posValue, reset posFlag
@@ -272,7 +272,7 @@ public class Main{
                     {
                         wordStr = foundWord.posWord;
                         value = foundWord.sentPosValue;
-                        editedWords.add(tempWord + " --- " + tempValue + "\twith\t" + wordStr + " --- " + value);
+                        editedWords.add(tempWord + " --- " + tempValue + "\t\twith\t\t" + wordStr + " --- " + value);
                     }
 
                     if (capitalized)

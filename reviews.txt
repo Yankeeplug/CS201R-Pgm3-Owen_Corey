@@ -5,15 +5,15 @@ pasta. The atmosphere was wonderful and enchanting.
 
 FINAL SENTIMENT: 5.43
 
-This was an facts restaurant! The pizza crust was integral, and I loved The pasta. 
-The atmosphere was gotten and enchanting. 
+This was an divine restaurant! The pizza crust was projects, and I loved The pasta. 
+The atmosphere was collective and enchanting. 
 
 REPLACED WORDS:
-amazing --- 1.26	with	facts --- -0.48
-delicious --- 2.2	with	integral --- -0.31
-wonderful --- 2.76	with	gotten --- -0.57
+amazing --- 1.26		with		divine --- -0.97
+delicious --- 2.2		with		projects --- -0.52
+wonderful --- 2.76		with		collective --- -0.28
 
-FINAL SENTIMENT: 0.37
+FINAL SENTIMENT: -0.04
 
 
 
@@ -42,19 +42,19 @@ thumbs up here.
 
 FINAL SENTIMENT: 20.35
 
-An ran local place with river views and good food in the moderate price range. 
-It leans heavily toward sea food but there are menu items for the listening and bovine 
+An disastrous local place with river views and good food in the moderate price range. 
+It leans heavily toward sea food but there are menu items for the watches and bovine 
 inclined. Reservations for diner are a must, particularly on Friday and Saturday 
 or any day a popular show is appearing at the Count Basie Theatre. Two appetizers 
-and Two entrees with nonalcoholic native set us back 91 with tip. Fairly faint. 
-We sat at a lovely set, uncomplicated, table with a wheels view of the Navesink 
-river and Its boat traffic. The service was police, amiable and generally proficient 
+and Two entrees with nonalcoholic park set us back 91 with tip. Fairly problems. 
+We sat at a lovely set, uncomplicated, table with a recalled view of the Navesink 
+river and Its boat traffic. The service was olive, amiable and generally proficient 
 about seeing to our needs. On this day I opened with the caprese salad which was 
-very nicely done. The pesto was a eccentric forbidding, not over powering. The wet mozzarella 
-perfect and heirloom tomatoes frayed. They flavors coming corridor very nicely. 
+very nicely done. The pesto was a missile demand, not over powering. The wet mozzarella 
+perfect and heirloom tomatoes exaggerated. They flavors coming physicians very nicely. 
 My wife had An oyster dish that Im having a senior moment trying to pull the name 
-from memory, however Its sauce was integral Im not a big oyster fan. I kept 
-my entree simple: fish and chips. The fish was a repair thick piece of cod, not some 
+from memory, however Its sauce was projects Im not a big oyster fan. I kept 
+my entree simple: fish and chips. The fish was a eat thick piece of cod, not some 
 cod replacement and fried to perfection. The fries were fries. My wife had the lobster 
 roll, which she gave high marks. Overall a good place to dine before a show or after 
 a late afternoon/ early evening walk about. Its not child adverse and a few dotted 
@@ -64,20 +64,20 @@ lot is just across the street and you dont have to pay after 6pm. Its a thumbs
 up here. 
 
 REPLACED WORDS:
-interesting --- 1.61	with	ran --- -0.1
-foul --- -2.84	with	listening --- 0.05
-drinks --- -1.34	with	native --- 0.23
-reasonable --- 1.3	with	faint --- -0.89
-beautiful --- 2.73	with	wheels --- -0.05
-polite --- 1.91	with	police --- -0.72
-tasty --- 2.52	with	eccentric --- -0.43
-accent --- 1.73	with	forbidding --- -0.57
-glorious --- 1.65	with	frayed --- -0.32
-together --- 2.09	with	corridor --- -0.2
-delicious --- 2.2	with	integral --- -0.31
-nice --- 2.09	with	repair --- -0.54
+interesting --- 1.61		with		disastrous --- -1.99
+foul --- -2.84		with		watches --- 0.03
+drinks --- -1.34		with		park --- 0.03
+reasonable --- 1.3		with		problems --- -1.03
+beautiful --- 2.73		with		recalled --- -0.37
+polite --- 1.91		with		olive --- -0.02
+tasty --- 2.52		with		missile --- -0.63
+accent --- 1.73		with		demand --- -0.18
+glorious --- 1.65		with		exaggerated --- -0.47
+together --- 2.09		with		physicians --- -0.3
+delicious --- 2.2		with		projects --- -0.52
+nice --- 2.09		with		eat --- -0.52
 
-FINAL SENTIMENT: 10.41
+FINAL SENTIMENT: 8.29
 
 
 
@@ -91,22 +91,22 @@ the location"
 
 FINAL SENTIMENT: -2.67
 
-Jennifer is very repair and responsive. The location of the apt is patients. However 
-- the bed was small and happiest bad. The apt also happiest under. We had to sleep 
+Jennifer is very eat and responsive. The location of the apt is agitated. However 
+- the bed was small and fill bad. The apt also fill respectful. We had to sleep 
 On a mattress On the floor - the building is very old. - the apt is not clean and 
-due to construction It was very miniature. However. We do chamber the stay and the 
+due to construction It was very probably. However. We do example the stay and the 
 location" 
 
 REPLACED WORDS:
-nice --- 2.09	with	repair --- -0.54
-great --- 1.48	with	patients --- -0.54
-smelled --- -2.44	with	happiest --- 2.28
-smelled --- -2.44	with	happiest --- 2.28
-weird --- -1.32	with	under --- 0.0
-noisy --- -1.32	with	miniature --- 0.47
-appreciate --- 1.48	with	chamber --- -0.12
+nice --- 2.09		with		eat --- -0.52
+great --- 1.48		with		agitated --- -1.65
+smelled --- -2.44		with		fill --- 0.3
+smelled --- -2.44		with		fill --- 0.3
+weird --- -1.32		with		respectful --- 0.88
+noisy --- -1.32		with		probably --- 0.06
+appreciate --- 1.48		with		example --- -0.16
 
-FINAL SENTIMENT: 3.84
+FINAL SENTIMENT: -0.78
 
 
 
@@ -128,40 +128,40 @@ peaceful and relaxed environment, I throughly recommend Bliss Art Space!
 
 FINAL SENTIMENT: 20.38
 
-Garon is undoubtedly the most nelson and grain host ever. You feel at home explicit 
-away, he is exciting and passionate, discussions are super ran and he is 
-extremely china. A stay at his place is a good mood cure. I highly recommend! 
-It was so grain staying at Garons! For the first glance it didnt look very fancy 
-or something, but This place is founding from inside out. Its joint reduce to get 
+Garon is undoubtedly the most quarterly and describe host ever. You feel at home involving 
+away, he is exciting and passionate, discussions are super disastrous and he is 
+extremely horse. A stay at his place is a good mood cure. I highly recommend! 
+It was so describe staying at Garons! For the first glance it didnt look very fancy 
+or something, but This place is forests from inside out. Its absence tabloid to get 
 to subway G train or if You walk a little more You can get to A train which goes 
-directly to JFK airport. Garon is a very kind person, very openminded and china! 
+directly to JFK airport. Garon is a very kind person, very openminded and horse! 
 We also have a lot in common in area of culture! Ill recommend This place to everyone 
 who is openminded and want to feel how people live there in NYC. Neighborhood looked 
-statements. Despite it was one of the coldest weeks for last year in town, but heating 
-worked uncertain and the room was equally! I had the most wheels stay, Garon is a very 
-special person and An excess angel, made me feel totally at home in a highly terrible 
-and pet environment, I throughly recommend Bliss Art Space! 
+tough. Despite it was one of the coldest weeks for last year in town, but heating 
+worked literally and the room was immediate! I had the most recalled stay, Garon is a very 
+special person and An welcoming angel, made me feel totally at home in a highly entered 
+and continental environment, I throughly recommend Bliss Art Space! 
 
 REPLACED WORDS:
-welcoming --- 2.41	with	nelson --- -0.13
-nice --- 2.09	with	grain --- -0.12
-right --- 1.35	with	explicit --- -0.33
-interesting --- 1.61	with	ran --- -0.1
-friendly --- 1.94	with	china --- -0.28
-nice --- 2.09	with	grain --- -0.12
-gorgeous --- 2.68	with	founding --- -0.18
-pretty --- 1.32	with	joint --- -0.22
-easy --- 1.97	with	reduce --- -0.38
-friendly --- 1.94	with	china --- -0.28
-safe --- 2.08	with	statements --- -0.04
-well --- 1.5	with	uncertain --- -0.86
-warm --- 1.46	with	equally --- -0.27
-beautiful --- 2.73	with	wheels --- -0.05
-absolute --- -1.51	with	excess --- 0.24
-peaceful --- 2.22	with	terrible --- -3.38
-relaxed --- 1.85	with	pet --- -1.33
+welcoming --- 2.41		with		quarterly --- -0.28
+nice --- 2.09		with		describe --- -0.43
+right --- 1.35		with		involving --- -0.65
+interesting --- 1.61		with		disastrous --- -1.99
+friendly --- 1.94		with		horse --- -0.47
+nice --- 2.09		with		describe --- -0.43
+gorgeous --- 2.68		with		forests --- -0.04
+pretty --- 1.32		with		absence --- -0.8
+easy --- 1.97		with		tabloid --- -0.17
+friendly --- 1.94		with		horse --- -0.47
+safe --- 2.08		with		tough --- -0.34
+well --- 1.5		with		literally --- -0.64
+warm --- 1.46		with		immediate --- -0.86
+beautiful --- 2.73		with		recalled --- -0.37
+absolute --- -1.51		with		welcoming --- 2.41
+peaceful --- 2.22		with		entered --- -0.06
+relaxed --- 1.85		with		continental --- -0.05
 
-FINAL SENTIMENT: -12.24
+FINAL SENTIMENT: -10.05
 
 
 
@@ -176,18 +176,18 @@ definitely a pro.
 
 FINAL SENTIMENT: -2.17
 
-For my stay the Apartment was also not endangered, there is no couch, only cushions on 
+For my stay the Apartment was also not hideous, there is no couch, only cushions on 
 the floor and there is no real table and chairs. I had to work from home sometimes 
 and could not really do It anywhere. The place was clean in general, only the bathroom 
 and the shower were really not okay. Especially the shower curtain was mildewed. 
-The kitchen was clean and reluctant equipped. Apartment has an AC, which is definitely 
+The kitchen was clean and recovery equipped. Apartment has an AC, which is definitely 
 A pro. 
 
 REPLACED WORDS:
-ideal --- 2.22	with	endangered --- -0.22
-well --- 1.5	with	reluctant --- -0.41
+ideal --- 2.22		with		hideous --- -2.58
+well --- 1.5		with		recovery --- -1.12
 
-FINAL SENTIMENT: -2.10
+FINAL SENTIMENT: -5.17
 
 
 
@@ -213,45 +213,45 @@ minutes walk. Best location ever and great relaxing place to stay.
 
 FINAL SENTIMENT: 32.34
 
-The Midtown Castle is a wheels place to stay in the center of the city. Truly 
-a sanctuary with everything you need. Little touches of nature and known throughout. 
-Waking up with the sun from the skylight was facts. This apartment is worker 
-and functional. The huge skylight makes it feel open and guiding. And it is located 
-smack dab in the middle of Manhattan. Highly recommended. Patients place. Would definitely 
-recommend! Jennifer is really fiery and reduce going. Wheels and nervous spot in 
-a very unique Building! Jennifer is a magic host and was kind enough to meet 
+The Midtown Castle is a recalled place to stay in the center of the city. Truly 
+a sanctuary with everything you need. Little touches of nature and dashing throughout. 
+Waking up with the sun from the skylight was divine. This apartment is atlantic 
+and functional. The huge skylight makes it feel open and ruthless. And it is located 
+smack dab in the middle of Manhattan. Highly recommended. Agitated place. Would definitely 
+recommend! Jennifer is really pouring and tabloid going. Recalled and corps spot in 
+a very unique Building! Jennifer is a escaped host and was kind enough to meet 
 us for out latenight checkin. We loved the apartment! Jennifers space was such 
 a lovely experience. PreCheckin and checkin was detailed and seamless, she made it 
 easier On us and answered all questions so quickly. The space itself is such a unique, 
 clear & zen energy- We loved it. Not to mention it was very clean & close to everything! 
 Definitely be prepared for the 4flight workout We appreciated that! We enjoyed 
 the space and location & would recommend this to anyone coming to explore the city! 
-Jennifer was super farms and fewer. Patients host with an facts studio apartment 
-explicit in the middle of NYC. Everything is walking distance! The Empire State Building, 
+Jennifer was super soap and fan. Agitated host with an divine studio apartment 
+involving in the middle of NYC. Everything is walking distance! The Empire State Building, 
 Times Square, and New York library were all around the corner or less than 15 minutes 
-walk. Interpretive location ever and patients relaxing place to stay. 
+walk. Mercy location ever and agitated relaxing place to stay. 
 
 REPLACED WORDS:
-beautiful --- 2.73	with	wheels --- -0.05
-beauty --- 2.45	with	known --- -0.3
-amazing --- 1.26	with	facts --- -0.48
-convenient --- 1.79	with	worker --- -0.25
-airy --- 1.69	with	guiding --- -0.43
-Great --- 1.48	with	patients --- -0.54
-sweet --- 1.47	with	fiery --- -1.57
-easy --- 1.97	with	reduce --- -0.38
-Beautiful --- 2.73	with	wheels --- -0.05
-stylish --- 1.39	with	nervous --- -1.69
-wonderful --- 2.76	with	magic --- -1.59
-friendly --- 1.94	with	farms --- -0.65
-helpful --- 1.71	with	fewer --- -0.31
-Great --- 1.48	with	patients --- -0.54
-amazing --- 1.26	with	facts --- -0.48
-right --- 1.35	with	explicit --- -0.33
-Best --- 1.4	with	interpretive --- -0.06
-great --- 1.48	with	patients --- -0.54
+beautiful --- 2.73		with		recalled --- -0.37
+beauty --- 2.45		with		dashing --- -0.16
+amazing --- 1.26		with		divine --- -0.97
+convenient --- 1.79		with		atlantic --- -0.33
+airy --- 1.69		with		ruthless --- -0.53
+Great --- 1.48		with		agitated --- -1.65
+sweet --- 1.47		with		pouring --- -0.57
+easy --- 1.97		with		tabloid --- -0.17
+Beautiful --- 2.73		with		recalled --- -0.37
+stylish --- 1.39		with		corps --- -0.16
+wonderful --- 2.76		with		escaped --- -0.95
+friendly --- 1.94		with		soap --- -1.56
+helpful --- 1.71		with		fan --- -0.09
+Great --- 1.48		with		agitated --- -1.65
+amazing --- 1.26		with		divine --- -0.97
+right --- 1.35		with		involving --- -0.65
+Best --- 1.4		with		mercy --- -0.55
+great --- 1.48		with		agitated --- -1.65
 
-FINAL SENTIMENT: -4.25
+FINAL SENTIMENT: -7.36
 
 
 
@@ -271,28 +271,28 @@ FINAL SENTIMENT: 18.56
 
 Would say our greatest compliments to Jennifer, the host of Midtown Castle. We spent 
 in this lovely apartment in the heart of Manhattan one month April, 2012) and will 
-remember this time as ours appalled. The apartment is joint spacious and chipped located 
-- the 5th Ave further around the corner. There is everything you can need during your 
-short or long stay. Jennifer is very initially, vigorous and very responsible host. 
-Swung her and Highly recomend this apartment for everyone who are looking for A 
-broken place further in the center of the boiling Midtown" We had A gotten stay 
-at Jennifers wary apartment! They were very organized and fewer; I Would definitely 
+remember this time as ours assault. The apartment is absence spacious and growing located 
+- the 5th Ave including around the corner. There is everything you can need during your 
+short or long stay. Jennifer is very failed, vigorous and very responsible host. 
+Alternate her and Highly recomend this apartment for everyone who are looking for A 
+louder place including in the center of the boiling Midtown" We had A collective stay 
+at Jennifers marks apartment! They were very organized and fan; I Would definitely 
 recommend staying at the Midtown Castle! 
 
 REPLACED WORDS:
-best --- 1.4	with	appalled --- -0.49
-pretty --- 1.32	with	joint --- -0.22
-great --- 1.48	with	chipped --- -0.06
-right --- 1.35	with	further --- -0.21
-friendly --- 1.94	with	initially --- -1.01
-Thanks --- 1.38	with	swung --- -0.02
-quiet --- 1.34	with	broken --- -0.5
-right --- 1.35	with	further --- -0.21
-wonderful --- 2.76	with	gotten --- -0.57
-charming --- 2.53	with	wary --- -0.42
-helpful --- 1.71	with	fewer --- -0.31
+best --- 1.4		with		assault --- -1.49
+pretty --- 1.32		with		absence --- -0.8
+great --- 1.48		with		growing --- -0.27
+right --- 1.35		with		including --- -0.29
+friendly --- 1.94		with		failed --- -0.09
+Thanks --- 1.38		with		alternate --- -0.3
+quiet --- 1.34		with		louder --- -0.62
+right --- 1.35		with		including --- -0.29
+wonderful --- 2.76		with		collective --- -0.28
+charming --- 2.53		with		marks --- -0.28
+helpful --- 1.71		with		fan --- -0.09
 
-FINAL SENTIMENT: 3.89
+FINAL SENTIMENT: 3.11
 
 
 
